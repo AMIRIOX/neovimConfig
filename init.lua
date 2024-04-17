@@ -37,7 +37,10 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use("folke/tokyonight.nvim")
-
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
   use({
   "akinsho/bufferline.nvim", requires = {
   "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }})
@@ -56,8 +59,10 @@ return require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope-fzf-native.nvim',
     run = 'make'
-}
-
+  }
+  use 'navarasu/onedark.nvim'
+  -- use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use { 'nvim-treesitter/nvim-treesitter' }
 
   if packer_bootstrap then
     require('packer').sync()

@@ -44,8 +44,11 @@ return require('packer').startup(function()
     "akinsho/bufferline.nvim", requires = {
 
     "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }})
+    
+    use 'navarasu/onedark.nvim'
 
 end)
+
 
 -- return require('packer').startup(function(use)
 --   -- Packer can manage itself

@@ -62,10 +62,10 @@ map("n", "<C-d>", "9j", opt)
 -- 在visual 模式里粘贴不要复制
 map("v", "p", '"_dP', opt)
 
--- 退出
-map("n", "q", ":q<CR>", opt)
-map("n", "qq", ":q!<CR>", opt)
-map("n", "Q", ":qa!<CR>", opt)
+-- 退出 (啥b快捷键绑定，我怎么用宏啊？)
+-- map("n", "q", ":q<CR>", opt)
+-- map("n", "qq", ":q!<CR>", opt)
+-- map("n", "Q", ":qa!<CR>", opt)
 
 -- insert 模式下，跳到行首行尾
 map("i", "<C-h>", "<ESC>I", opt)
