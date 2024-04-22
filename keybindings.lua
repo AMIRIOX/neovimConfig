@@ -77,6 +77,7 @@ map("i", "<C-l>", "<ESC>A", opt)
 
 -- bufferline
 -- 左右Tab切换
+map("n", "<Tab>", ":BufferLineCycleNext<CR>", opt)
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 -- 关闭
