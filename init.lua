@@ -1,38 +1,7 @@
--- 添加 Packer 路径到 package.path
 package.path = package.path .. ';/home/amiriox/.config/nvim/?.lua'
 package.path = package.path .. ';/home/amiriox/.local/share/nvim/site/pack/packer/start/packer.nvim/?.lua'
 
--- 基础配置
-require('basic')
--- 快捷键映射
-require("keybindings")
--- Packer 插件管理
-require('plugins').startup()
-
--- 主题设置 （新增）
-require("colorscheme")
--- 插件配置
-require("plugin-config.nvim-tree")
-require("plugin-config.bufferline")
-require("plugin-config.lualine")
-require("plugin-config.dashboard")
-require("plugin-config.project")
-require("plugin-config.telescope")
-require('telescope').load_extension('projects')
-
-
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
-end
-
-local packer_bootstrap = ensure_packer()
+vim.cmd [[packadd packer.nvim]]
 
 -- add
 return require('packer').startup(function(use)
@@ -65,6 +34,7 @@ return require('packer').startup(function(use)
   -- use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use { 'nvim-treesitter/nvim-treesitter' }
   use "numToStr/FTerm.nvim"
+  use 'wakatime/vim-wakatime'
   --[[  
   use {"Pu-gayhub/CodeRunner.nvim",
       config = function()
@@ -95,6 +65,26 @@ return require('packer').startup(function(use)
      end
   }
 ]]
+
+-- 基础配置
+require('basic')
+-- 快捷键映射
+require("keybindings")
+-- Packer 插件管理
+-- require('plugins').startup()
+
+-- 主题设置 （新增）
+require("colorscheme")
+-- 插件配置
+require("plugin-config.nvim-tree")
+require("plugin-config.bufferline")
+require("plugin-config.lualine")
+require("plugin-config.dashboard")
+require("plugin-config.project")
+require("plugin-config.telescope")
+require('telescope').load_extension('projects')
+
+
   if packer_bootstrap then
     require('packer').sync()
   end

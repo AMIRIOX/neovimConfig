@@ -79,6 +79,7 @@ vim.o.showtabline = 2
 -- 使用增强状态栏插件后不再需要 vim 的模式提示
 vim.o.showmode = false
 
+--[[
 require('nvim-treesitter.configs').setup({                                               
     -- 支持的语言
     ensure_installed = {"rust", "java", "html", "css", "vim", "lua", "javascript", "typescript", "c", "cpp", "python"},
@@ -102,6 +103,7 @@ require('nvim-treesitter.configs').setup({
         enable = true
     },
 })
+--]]
 -- 开启代码折叠
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
